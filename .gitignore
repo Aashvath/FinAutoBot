@@ -1,6 +1,15 @@
-.env
+# Node / Next.js
+node_modules/
+.next/
+out/
+
+# Python
 __pycache__/
 *.pyc
-node_modules/
+.env
+
+# OS files
+.DS_Store
+
+# Uploads / temp
 uploads/
-out.txt
