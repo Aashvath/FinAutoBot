@@ -1,0 +1,60 @@
+[DEBUG OUTPUT – NOT USER FACING]
+
+This file is generated only for development and verification purposes.
+The production application consumes structured JSON responses directly
+from the FastAPI backend and does NOT rely on this file.
+
+--------------------------------------------------
+
+MONTHLY SUMMARY
+---------------
+[
+  {
+    "month": "2024-01",
+    "income": 350000,
+    "expenses": 240595,
+    "savings": 109405
+  },
+  {
+    "month": "2024-02",
+    "income": 190000,
+    "expenses": 162656,
+    "savings": 27344
+  }
+]
+
+--------------------------------------------------
+
+CATEGORY BREAKDOWN
+------------------
+{
+  "2024-01": [
+    { "category": "expense", "amount": 240595 }
+  ],
+  "2024-02": [
+    { "category": "expense", "amount": 162656 }
+  ]
+}
+
+--------------------------------------------------
+
+BEHAVIOUR METRICS
+-----------------
+{
+  "salary_change_pct": null,
+  "income_stability": "stable",
+  "expense_volatility": "medium"
+}
+
+--------------------------------------------------
+
+SIP CAPACITY (RULE-BASED)
+-------------------------
+{
+  "safe_monthly_sip": 36815,
+  "max_possible_sip": 49087
+}
+
+--------------------------------------------------
+
+END OF DEBUG REPORT

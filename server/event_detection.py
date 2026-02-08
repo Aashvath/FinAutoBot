@@ -1,3 +1,5 @@
+from dotenv import load_dotenv
+load_dotenv()
 import pandas as pd
 import numpy as np
 from tabulate import tabulate  # For pretty printing tables
@@ -46,9 +48,14 @@ import os
 
 def detect_life_event_with_sarvam(analysis_data: str):
     api_key = os.getenv("SARVAM_API_KEY")
-    if not api_key:
-        raise RuntimeError("SARVAM_API_KEY not set")
 
+    # SAFE FALLBACK — DO NOT CRASH
+    if not api_key:
+        return {
+            "primaryEvent": "none",
+            "detectedSignal": "none",
+            "reasoning": "Life event detection unavailable (AI key not configured)"
+        }
     url = "https://api.sarvam.ai/v1/chat/completions"
 
     headers = {
@@ -543,8 +550,16 @@ def generate_financial_facts(monthly_summary):
     """
 
     api_key = os.getenv("SARVAM_API_KEY")
+
     if not api_key:
-        raise RuntimeError("SARVAM_API_KEY not set")
+        # if sarvam api key not set 
+            return {
+                "months": monthly_summary,
+                "overall_patterns": [],
+                "risk_flags": [
+                    "AI explanation unavailable because SARVAM_API_KEY is not configured"
+                ]  
+            }
 
     prompt = f"""
 You are a financial data analyst.
@@ -618,9 +633,13 @@ def generate_advisory_report(facts_json):
     Stage 2 AI: Converts FACTS into deep human explanation.
     """
 
-    api_key = os.getenv("SARVAM_API_KEY")
+    aapi_key = os.getenv("SARVAM_API_KEY")
     if not api_key:
-        raise RuntimeError("SARVAM_API_KEY not set")
+        return {
+            "summary": "AI explanation unavailable. Showing rule-based financial insights.",
+            "sections": [],
+            "final_advice": []
+        }
 
     prompt = f"""
 You are a senior Indian personal finance advisor.
@@ -727,7 +746,14 @@ def analyze_transactions_api(csv_path=None, risk=50):
 
 
     # ---- AI STAGE 2: HUMAN EXPLANATION ----
-    ai_report = generate_advisory_report(facts)
+    try:
+        ai_report = generate_advisory_report(facts)
+    except Exception:
+        ai_report = {
+            "summary": "AI explanation unavailable.",
+            "sections": [],
+            "final_advice": []
+        }
 
     # ---- SIP (RULE-BASED, SAFE) ----
     sip_plan = generate_sip_recommendation(
@@ -789,7 +815,7 @@ def analyze_transactions_api(csv_path=None, risk=50):
 def report_chat_with_sarvam(report_json, user_question):
     api_key = os.getenv("SARVAM_API_KEY")
     if not api_key:
-        raise RuntimeError("SARVAM_API_KEY not set")
+        return "AI chat explanation is unavailable because the API key is not configured."
 
     prompt = f"""
 You are a financial report explanation assistant.
