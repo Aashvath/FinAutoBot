@@ -1,0 +1,55 @@
+# Bank Statement Analysis System
+
+## Overview
+This system provides financial analysis of customer bank transactions with life event detection capabilities. It uses transaction pattern analysis and AI-based detection to identify significant life events such as:
+- New Baby
+- Job Change
+- Wedding
+- Home Purchase
+
+## Technical Components
+
+### Server-side (Python)
+1. **Transaction Analysis (event_detection.py)**
+   - Parses CSV bank statement data
+   - Analyzes monthly aggregates and categorizes transactions
+   - Identifies recurring transactions and their changes over time
+   - Detects large single transactions (≥50% of category total)
+   - Generates comprehensive analysis summaries
+
+2. **Life Event Detection**
+   - Uses Google's Generative AI (Gemini) to detect life events
+   - Analyzes transaction patterns to identify significant life changes
+   - Returns structured responses with event type and reasoning
+
+3. **API Endpoints**
+   - `/hello` - Accepts bank statement file uploads and returns analysis with event detection
+   - `/recommendation` - Provides portfolio recommendations based on detected events and goals
+
+### Client-side (Next.js)
+1. **File Upload System**
+   - BankStatementUpload component handles file selection and upload
+   - Displays progress indicators during upload and processing
+   - Passes detected event information back to the main application
+
+2. **Event Display Components**
+   - UserOverview displays user badges based on detected events
+   - LifeEventAlerts shows filtered events relevant to current detection
+   - GoalSelectionForm displays event details and reasoning
+
+3. **Modal System**
+   - Prevents background scrolling when modals are open
+   - Ensures modals have appropriate sizing and scrolling capabilities
+   - Maintains responsive design across different screen sizes
+
+## Integration Flow
+1. User uploads bank statement through the interface
+2. File is sent to server for processing
+3. Server analyzes transaction data and detects life events
+4. Results are returned to client application
+5. UI updates to display detected event and relevant financial recommendations
+6. User can confirm events and select financial goals
+7. System provides personalized portfolio recommendations
+
+## Data Flow
+Bank Statement → Transaction Analysis → Event Detection → UI Display → Goal Selection → Portfolio Recommendations

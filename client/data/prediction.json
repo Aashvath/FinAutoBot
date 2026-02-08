@@ -1,0 +1,37 @@
+{
+  "user_id": "U123",
+  "goals": [
+    {
+      "goal_name": "Home Down Payment",
+      "base_plan": "Equity Revival",
+      "ideal_holding": "3+ years",
+      "adjusted_allocation": {
+        "equity": 0.6,
+        "debt": 0.25,
+        "gold": 0.05,
+        "liquid": 0.1
+      },
+      "target_amount": 750000,
+      "target_horizon_years": 2,
+      "recommended_sip": 27805.1,
+      "expected_return": "12% p.a.",
+      "rationale": "Base plan 'Equity Revival' with default allocation {'equity': 0.65, 'debt': 0.25, 'gold': 0.05, 'liquid': 0.05} and expected return 12% was selected. Target horizon (2 yrs) is shorter than ideal holding period (3+ yrs); reduced equity by 5% and increased liquid assets accordingly. Moderate risk profile: minimal adjustments applied."
+    },
+    {
+      "goal_name": "Career Sabbatical Fund",
+      "base_plan": "Dynamic Debt +",
+      "ideal_holding": "2+ years",
+      "adjusted_allocation": {
+        "equity": 0.66,
+        "debt": 0.24,
+        "gold": 0.05,
+        "liquid": 0.05
+      },
+      "target_amount": 1000000,
+      "target_horizon_years": 30,
+      "recommended_sip": 356.57,
+      "expected_return": "11% p.a.",
+      "rationale": "Base plan 'Dynamic Debt +' with default allocation {'equity': 0.1, 'debt': 0.8, 'gold': 0.05, 'liquid': 0.05} and expected return 11% was selected. Target horizon (30 yrs) is longer than ideal; increased equity by 56% for additional growth. Moderate risk profile: minimal adjustments applied."
+    }
+  ]
+}

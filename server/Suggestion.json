@@ -1,0 +1,35 @@
+[
+    {
+      "plan_name": "Equity Revival",
+      "description": "Invest in a multi-cap strategy that aims to outperform the benchmark with minimal downside.",
+      "ideal_holding": "3+ years",
+      "default_allocation": { "equity": 0.65, "debt": 0.25, "gold": 0.05, "liquid": 0.05 },
+      "performance": "Since inception: 29.5% TWIRR",
+      "learn_more_url": "https://dezerv.com/plans/equity-revival"
+    },
+    {
+      "plan_name": "Alpha Focused",
+      "description": "Invest in a portfolio of high growth mid and small cap funds to generate high alpha over the market benchmark.",
+      "ideal_holding": "5+ years",
+      "default_allocation": { "equity": 0.80, "debt": 0.10, "gold": 0.05, "liquid": 0.05 },
+      "performance": "Since inception: 50.7% TWIRR",
+      "learn_more_url": "https://dezerv.com/plans/alpha-focused"
+    },
+    {
+      "plan_name": "Dynamic Debt +",
+      "description": "Invest in a portfolio of high quality corporate bonds with average maturity of 2-3 years.",
+      "ideal_holding": "2+ years",
+      "default_allocation": { "equity": 0.10, "debt": 0.80, "gold": 0.05, "liquid": 0.05 },
+      "performance": "YTM: 11.02%",
+      "learn_more_url": "https://dezerv.com/plans/dynamic-debt-plus"
+    },
+    {
+      "plan_name": "Private Credit AIF",
+      "description": "A portfolio of India’s top private credit funds for investors who want high fixed returns at moderate risk.",
+      "ideal_holding": "4+ years",
+      "default_allocation": { "equity": 0.0, "debt": 0.95, "gold": 0.0, "liquid": 0.05 },
+      "performance": "",
+      "learn_more_url": "https://dezerv.com/plans/private-credit-aif"
+    }
+  ]
+    
